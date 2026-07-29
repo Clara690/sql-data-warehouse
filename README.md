@@ -1,4 +1,4 @@
-## What the project is about 
+## What the project is about?
 
 ## How to run it on your machine
 ```text
