@@ -1,11 +1,8 @@
 /*
 ===============================================================================
-DDL Script: Create Bronze Tables
-===============================================================================
 Script Purpose:
-    This script creates tables in the 'bronze' schema, dropping existing tables 
-    if they already exist.
-	  Run this script to re-define the DDL structure of 'bronze' Tables
+    This script creates tables in the 'dw_bronze' database if they do not exist
+	  Run this script to re-define the DDL structure of 'bronze' tables
 ===============================================================================
 */
 
@@ -14,7 +11,7 @@ CREATE TABLE IF NOT EXISTS dw_bronze.crm_cust_info(
     cst_key CHAR(50),
     cst_firstname CHAR(50),
     cst_lastname CHAR(50),
-    cst_material_status CHAR(50),
+    cst_marital_status CHAR(50),
     cst_gndr CHAR(50),
     cst_create_date DATE
 );
@@ -30,7 +27,8 @@ CREATE TABLE IF NOT EXISTS dw_bronze.crm_prd_info (
     pre_end_dt DATETIME
 );
 
-CREATE TABLE IF NOT EXISTS dw_bronze.crm_prd_info (
+
+CREATE TABLE IF NOT EXISTS dw_bronze.crm_sales_details (
     prd_id INT,
     prd_key CHAR(50),
     prd_nm CHAR(50),
