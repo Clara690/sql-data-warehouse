@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS dw_bronze.erp_cust_az12(
     gen CHAR(50)
 );
 
-CREATE TABLE IF NOT EXISTS dw_bronze.erp_px_cat_glv2(
+CREATE TABLE IF NOT EXISTS dw_bronze.erp_px_cat_g1v2(
 	id CHAR(50),
     cat CHAR(50),
     subcat CHAR(50),

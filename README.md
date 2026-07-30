@@ -1,6 +1,9 @@
 ## What the project is about?
+This project demonstrate how to build a dataware house with medallion architecture. 
 
 ## How to run it on your machine
+Setup MySQL server and phpadmin
+
 ```text
 docker compose -f mysql.yml up -d
 ```
