@@ -29,13 +29,15 @@ CREATE TABLE IF NOT EXISTS dw_bronze.crm_prd_info (
 
 
 CREATE TABLE IF NOT EXISTS dw_bronze.crm_sales_details (
-    prd_id INT,
-    prd_key CHAR(50),
-    prd_nm CHAR(50),
-    prd_cost INT,
-    prd_line CHAR(50),
-    prd_start_dt DATETIME,
-    prd_end_dt DATETIME
+    sls_ord_num  CHAR(50),
+    sls_prd_key  CHAR(50),
+    sls_cust_id  INT,
+    sls_order_dt INT,
+    sls_ship_dt  INT,
+    sls_due_dt   INT,
+    sls_sales    INT,
+    sls_quantity INT,
+    sls_price    INT
 );
 
 CREATE TABLE IF NOT EXISTS dw_bronze.erp_loc_a101(
