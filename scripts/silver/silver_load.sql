@@ -23,3 +23,12 @@ FROM depulicated_crm_cust_info
 WHERE row_num = 1 AND cst_id != 0;
             
        
+SELECT
+	prd_id,
+    prd_key,
+    SUBTRING(prd_key, 1, 5) AS cat_id,
+    prd_nm,
+    prd_cost,
+    prd_line,
+    prd_start_dt,
+    prd_end_dt
