@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS dw_bronze.crm_prd_info (
     prd_cost INT,
     prd_line CHAR(50),
     prd_start_dt DATETIME,
-    pre_end_dt DATETIME
+    prd_end_dt DATETIME
 );
 
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS dw_bronze.crm_sales_details (
     prd_cost INT,
     prd_line CHAR(50),
     prd_start_dt DATETIME,
-    pre_end_dt DATETIME
+    prd_end_dt DATETIME
 );
 
 CREATE TABLE IF NOT EXISTS dw_bronze.erp_loc_a101(
