@@ -55,3 +55,5 @@ CREATE TABLE IF NOT EXISTS dw_bronze.erp_px_cat_g1v2(
     subcat CHAR(50),
     maintenance CHAR(50)
 );
+
+-- hjkl
