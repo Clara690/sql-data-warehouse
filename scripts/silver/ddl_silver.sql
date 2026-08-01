@@ -20,25 +20,28 @@ CREATE TABLE IF NOT EXISTS dw_silver.crm_cust_info(
 
 CREATE TABLE IF NOT EXISTS dw_silver.crm_prd_info (
     prd_id INT,
+    cat_id CHAR(50),
     prd_key CHAR(50),
     prd_nm CHAR(50),
     prd_cost INT,
     prd_line CHAR(50),
     prd_start_dt DATETIME,
-    pre_end_dt DATETIME,
+    prd_end_dt DATETIME,
     dwh_create_date DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 
 CREATE TABLE IF NOT EXISTS dw_silver.crm_sales_details (
-    prd_id INT,
-    prd_key CHAR(50),
-    prd_nm CHAR(50),
-    prd_cost INT,
-    prd_line CHAR(50),
-    prd_start_dt DATETIME,
-    pre_end_dt DATETIME,
-    dwh_create_date DATETIME DEFAULT CURRENT_TIMESTAMP
+    sls_ord_num     CHAR(50),
+    sls_prd_key     CHAR(50),
+    sls_cust_id     INT,
+    sls_order_dt    DATE,
+    sls_ship_dt     DATE,
+    sls_due_dt      DATE,
+    sls_sales       INT,
+    sls_quantity    INT,
+    sls_price       INT,
+    dwh_create_date DATETIME DEFAULT NOW()
 );
 
 CREATE TABLE IF NOT EXISTS dw_silver.erp_loc_a101(
