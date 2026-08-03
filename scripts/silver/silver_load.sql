@@ -180,3 +180,6 @@ BEGIN
 END //
 
 DELIMITER ;
+
+-- run the procedure to load the silver tables
+CALL dw_silver.load_silver();
