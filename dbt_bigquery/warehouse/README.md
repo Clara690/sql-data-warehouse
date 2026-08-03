@@ -1,15 +1,10 @@
-Welcome to your new dbt project!
+## What the project is about?
+This project can be considered an extension of the MySQL warehouse seen at the root directory. The main difference between the two projects is the data warehouse (Google BigQuery) and tool used [dbt](https://www.getdbt.com/).
 
-### Using the starter project
+### More details
+In addition to the difference tools, there's also some differences in the modeling choice. 
+- Silver -> view
+- Gold -> table 
+The reason has a lot to do with how BigQuery operates. It charges based on the amount of data it handles per query and data storage is relatively low cost. Having the *Silver* layer as view makes sure the data is always up-to-date with the *Bronze* layer. Besides, the *Silver* layer is not queried as often. 
+The Gold layer is what the analytical teams will be using for dashboards or reports, having it as a materialized view (table) will significantly reduces the cost of having to re-build the view. 
 
-Try running the following commands:
-- dbt run
-- dbt test
-
-
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
