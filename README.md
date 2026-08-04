@@ -4,6 +4,9 @@ This project demonstrate how to build a dataware house with medallion architectu
 In comaprison to SQL server, MySQL does not have the 3-tier object path, meaning that a schema is the same with a database. To bypass this, I created three different databases with a prefix *dw_*
 to represent the different layers of the architecture. 
 
+The architecture of the warehouse is shown in the following graph. 
+![f-architecture](./docs/architecture.png)
+
 ## How to run it on your machine
 Setup MySQL server and phpadmin
 
