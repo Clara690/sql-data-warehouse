@@ -33,3 +33,4 @@ WHERE
     row_num = 1
     AND cst_id IS NOT NULL
     AND cst_id != 0
+{{ ref ('cust_info') }}

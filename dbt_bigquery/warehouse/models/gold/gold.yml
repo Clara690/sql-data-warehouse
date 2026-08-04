@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: dim_customers
+    columns:
+      - name: customer_key
+        tests:
+          - unique
+          - not_null
+      - name: gender
+        tests:
+          - accepted_values:
+              values: ['Male', 'Female', 'n/a']
+
+  - name: dim_products
+    columns:
+      - name: product_key
+        tests:
+          - unique
+          - not_null
+      - name: product_line
+        tests:
+          - accepted_values:
+              values: ['Road', 'Mountain', 'Touring', 'Other Sales', 'n/a']
+
+  - name: fact_sales
+    columns:
+      - name: customer_key
+        tests:
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_key
+      - name: product_key
+        tests:
+          - relationships:
+              to: ref('dim_products')
+              field: product_key
