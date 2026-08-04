@@ -1,0 +1,69 @@
+version: 2
+
+models:
+  - name: crm_cust_info
+    description: "Cleaned CRM customer master data. Deduplicated to one row per customer (latest record by create date), with marital status and gender standardized to full text values."
+    columns:
+      - name: cst_id
+        description: "Customer ID from source CRM system. Primary key at this grain."
+        tests:
+          - unique
+          - not_null
+      - name: cst_key
+        description: "Business key used to join against ERP customer/location data in the gold layer."
+      - name: cst_marital_status
+        description: "Standardized from raw single-letter codes (S/M) to full text; unmapped values default to 'n/a'."
+      - name: cst_gndr
+        description: "Standardized from raw single-letter codes (F/M) to full text; unmapped values default to 'n/a'."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Female', 'Male', 'n/a']
+
+  - name: crm_prd_info
+    description: "Cleaned CRM product data. Product key split into category ID and cleaned product key; product line codes mapped to full text; end date derived from the next product version's start date."
+    columns:
+      - name: prd_id
+        description: "Product ID from source CRM system. Primary key at this grain."
+        tests:
+          - unique
+          - not_null
+      - name: cat_id
+        description: "Category ID extracted from the first 5 characters of the raw product key, used to join against erp_px_cat_g1v2."
+      - name: prd_end_dt
+        description: "Derived, not sourced directly — calculated as one day before the next version of the same product_key begins. Null for the current/active version."
+
+  - name: crm_sales_details
+    description: "Cleaned CRM sales order line data. Dates parsed from integer YYYYMMDD format, invalid dates set to null; sales_amount and price recalculated where the source values were missing or inconsistent with quantity * price."
+    columns:
+      - name: sls_ord_num
+        description: "Sales order number from source system. Not unique alone — grain is order_number + product_key."
+        tests:
+          - not_null
+      - name: sls_sales
+        description: "Recalculated as quantity * abs(price) when the source value was null, non-positive, or inconsistent with quantity * price; otherwise passed through as-is."
+
+  - name: erp_cust_az12
+    description: "Cleaned ERP customer demographic data. Customer ID stripped of 'NAS' prefix where present to align with CRM's cst_key format; future birthdates nulled out; gender standardized to full text."
+    columns:
+      - name: cid
+        description: "Customer ID, cleaned to match crm_cust_info.cst_key for joining in the gold layer."
+        tests:
+          - not_null
+
+  - name: erp_loc_a101
+    description: "Cleaned ERP location data. Customer ID hyphens removed to align with CRM's cst_key format; country codes/names standardized (e.g. DE -> Germany, US/USA -> United States)."
+    columns:
+      - name: cid
+        description: "Customer ID, cleaned to match crm_cust_info.cst_key for joining in the gold layer."
+        tests:
+          - not_null
+
+  - name: erp_px_cat_g1v2
+    description: "Product category reference data (category, subcategory, maintenance flag). Pass-through from bronze with no transformation."
+    columns:
+      - name: id
+        description: "Category ID, joined against crm_prd_info.cat_id in the gold layer."
+        tests:
+          - unique
+          - not_null

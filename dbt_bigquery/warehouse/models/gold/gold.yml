@@ -2,36 +2,47 @@ version: 2
 
 models:
   - name: dim_customers
+    description: "Customer dimension combining CRM master data with ERP demographic and location attributes. One row per unique customer."
     columns:
       - name: customer_key
+        description: "Surrogate key generated via row_number(), used as the join key from fact_sales."
         tests:
           - unique
           - not_null
       - name: gender
+        description: "Gender, reconciled from CRM (primary source) with ERP as fallback when CRM value is 'n/a'."
         tests:
           - accepted_values:
-              values: ['Male', 'Female', 'n/a']
+              arguments:
+                values: ['Female', 'Male', 'n/a']
 
   - name: dim_products
+    description: "Product dimension. Filtered to current products only (prd_end_dt is null) — historical product versions are excluded."
     columns:
       - name: product_key
+        description: "Surrogate key generated via row_number()."
         tests:
           - unique
           - not_null
       - name: product_line
+        description: "Product line category."
         tests:
           - accepted_values:
-              values: ['Road', 'Mountain', 'Touring', 'Other Sales', 'n/a']
+              arguments:
+                values: ['Road', 'Mountain', 'Touring', 'Other Sales', 'n/a']
 
   - name: fact_sales
+    description: "One row per sales order line. Grain: order_number + product_key."
     columns:
       - name: customer_key
         tests:
           - relationships:
-              to: ref('dim_customers')
-              field: customer_key
+              arguments:
+                to: ref('dim_customers')
+                field: customer_key
       - name: product_key
         tests:
           - relationships:
-              to: ref('dim_products')
-              field: product_key
+              arguments:  
+                to: ref('dim_products')
+                field: product_key
