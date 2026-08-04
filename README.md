@@ -5,16 +5,22 @@ In comaprison to SQL server, MySQL does not have the 3-tier object path, meaning
 to represent the different layers of the architecture. 
 
 The architecture of the warehouse is shown in the following graph. 
+
+
 ![f-architecture](./docs/architecture.png)
 
-## How to run it on your machine
+![dbt CI](https://github.com/Clara690/sql-data-warehouse/actions/workflows/dbt.yml/badge.svg)
+
+
+## For those who'd like to try running the project themselves
+### How to run it on your machine
 Setup MySQL server and phpadmin
 
 ```text
 docker compose -f mysql.yml up -d
 ```
 
-## Tips 💡
+### Tips 💡
 I got so tried of manual formatting my SQL code so I downloaded a [SQL formatter](https://github.com/darold/pgFormatter). 
 
 Installation
