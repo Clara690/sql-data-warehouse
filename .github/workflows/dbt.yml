@@ -1,0 +1,45 @@
+name: dbt CI
+
+on:
+  push:
+    paths:
+      - 'dbt_bigquery/**' # the workflow will only be triggered when the files inside this folder change
+
+jobs:
+  dbt-build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: dbt_bigquery
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install dependencies
+        run: uv sync 
+      
+      - name: Write GCP service account key 
+        run: echo "${{ secrets.GCP_SA_KEY}}" > /tmp/gcp-key.json
+      
+      - name: Write dbt profiles.yml 
+        run: |
+          mkdir -p ~/.dbt
+          cat <<EOF > ~/.dbt/profiles.yml
+          warehouse:
+            target: dev
+            outputs:
+              dev:
+                type: bigquery
+                method: service-account
+                project: data-warehouse-dbt
+                dataset: silver
+                threads: 4
+                keyfile: /tmp/gcp-key.json
+                location: US
+          EOF
+      - name: Run dbt build
+        working-directory: dbt_bigquery/warehouse
+        run: uv run --project .. dbt build

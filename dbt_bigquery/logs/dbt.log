@@ -1,0 +1,174 @@
+[0m12:02:07.218900 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72141dcc2f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72141dcc8090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72141dcc8c90>]}
+
+
+============================== 12:02:07.235516 | 08578982-13d0-46e1-a72f-715d8053adc5 ==============================
+[0m12:02:07.235516 [info ] [MainThread]: Running with dbt=1.12.0
+[0m12:02:07.235809 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'empty': 'None', 'indirect_selection': 'eager', 'log_format': 'default', 'hints_enabled': 'True', 'maximum_seed_size_mib': '1', 'profiles_dir': '/home/clara/.dbt', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'use_colors': 'True', 'write_json': 'True', 'log_cache_events': 'False', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'log_path': 'logs', 'no_print': 'None', 'quiet': 'False', 'version_check': 'True', 'fail_fast': 'False', 'invocation_command': 'dbt init warehouse', 'partial_parse': 'True', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None'}
+[0m12:02:07.270761 [info ] [MainThread]: Creating dbt configuration folder at /home/clara/.dbt
+[0m12:02:07.272490 [debug] [MainThread]: Starter project path: /home/clara/sql-data-warehouse/dbt_bigquery/.venv/lib/python3.11/site-packages/dbt/include/starter_project
+[0m12:02:07.275886 [info ] [MainThread]: Setting up your profile.
+[0m12:13:10.465346 [info ] [MainThread]: Profile warehouse written to /home/clara/.dbt/profiles.yml using target's profile_template.yml and your supplied values.
+[0m12:13:10.474587 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m12:13:10.475134 [info ] [MainThread]: dbt version: 1.12.0
+[0m12:13:10.475319 [info ] [MainThread]: python version: 3.11.15
+[0m12:13:10.475495 [info ] [MainThread]: python path: /home/clara/sql-data-warehouse/dbt_bigquery/.venv/bin/python3
+[0m12:13:10.475654 [info ] [MainThread]: os info: Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.43
+[0m12:13:10.508489 [info ] [MainThread]: Using profiles dir at /home/clara/.dbt
+[0m12:13:10.508849 [info ] [MainThread]: Using profiles.yml file at /home/clara/.dbt/profiles.yml
+[0m12:13:10.509000 [info ] [MainThread]: Using dbt_project.yml file at /home/clara/sql-data-warehouse/dbt_bigquery/warehouse/dbt_project.yml
+[0m12:13:10.509150 [info ] [MainThread]: adapter type: bigquery
+[0m12:13:10.509315 [info ] [MainThread]: adapter version: 1.12.0
+[0m12:13:10.565603 [info ] [MainThread]: Configuration:
+[0m12:13:10.566039 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m12:13:10.566235 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m12:13:10.566410 [info ] [MainThread]: Required dependencies:
+[0m12:13:10.566579 [debug] [MainThread]: Executing "git --help"
+[0m12:13:10.591149 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m12:13:10.591628 [debug] [MainThread]: STDERR: "b''"
+[0m12:13:10.591829 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m12:13:10.592050 [info ] [MainThread]: Connection:
+[0m12:13:10.592262 [info ] [MainThread]:   method: service-account
+[0m12:13:10.592494 [info ] [MainThread]:   database: data-warehouse-dbt
+[0m12:13:10.592669 [info ] [MainThread]:   execution_project: data-warehouse-dbt
+[0m12:13:10.592858 [info ] [MainThread]:   schema: silver
+[0m12:13:10.593008 [info ] [MainThread]:   location: US
+[0m12:13:10.593160 [info ] [MainThread]:   priority: interactive
+[0m12:13:10.593352 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m12:13:10.593514 [info ] [MainThread]:   reservation: None
+[0m12:13:10.593664 [info ] [MainThread]:   impersonate_service_account: None
+[0m12:13:10.593809 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m12:13:10.593954 [info ] [MainThread]:   job_retries: 1
+[0m12:13:10.594104 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m12:13:10.594248 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m12:13:10.594435 [info ] [MainThread]:   job_link_info_level_log: False
+[0m12:13:10.594582 [info ] [MainThread]:   timeout_seconds: 300
+[0m12:13:10.594717 [info ] [MainThread]:   client_id: None
+[0m12:13:10.594890 [info ] [MainThread]:   token_uri: None
+[0m12:13:10.595015 [info ] [MainThread]:   compute_region: None
+[0m12:13:10.595143 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m12:13:10.595318 [info ] [MainThread]:   gcs_bucket: None
+[0m12:13:10.595464 [info ] [MainThread]:   dataproc_batch: None
+[0m12:13:10.595769 [info ] [MainThread]: Registered adapter: bigquery=1.12.0
+[0m12:13:10.661806 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m12:13:10.662138 [debug] [MainThread]: On debug: select 1 as id
+[0m12:13:10.662376 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:13:10.662616 [debug] [MainThread]: BigQuery adapter: Got an error when attempting to create a bigquery " "client: '[Errno 2] No such file or directory: '~/.dbt/keys/data-warehouse-dbt-74ee16e1f308.json''
+[0m12:13:10.662802 [debug] [MainThread]: BigQuery adapter: Unhandled error while running:
+select 1 as id
+[0m12:13:10.662943 [debug] [MainThread]: BigQuery adapter: Database Error
+  [Errno 2] No such file or directory: '~/.dbt/keys/data-warehouse-dbt-74ee16e1f308.json'
+[0m12:13:10.663110 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m12:13:10.663284 [info ] [MainThread]: [31m1 check failed:[0m
+[0m12:13:10.663422 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >'NoneType' object has no attribute 'close'
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m12:13:10.663589 [info ] [MainThread]: Your new dbt project "warehouse" was created!
+Initialized new project in /home/clara/sql-data-warehouse/dbt_bigquery/warehouse/warehouse
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:13:10.663731 [info ] [MainThread]: [31mYour profile may need adjustments. You can find the logs of `dbt debug` above[0m
+[0m12:13:10.664065 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 663.5356, "process_in_blocks": "269744", "process_kernel_time": 0.521184, "process_mem_max_rss": "236604", "process_out_blocks": "82888", "process_user_time": 4.039182}
+[0m12:13:10.664492 [debug] [MainThread]: Command `dbt init` succeeded at 12:13:10.664438 after 663.54 seconds
+[0m12:13:10.664710 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72141aebe6d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72141aa263d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72141ae0aad0>]}
+[0m12:13:10.664937 [debug] [MainThread]: Flushing usage events
+[0m12:13:11.223490 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:22:44.771667 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d09a44f6c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d09a1554110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d09a1679ed0>]}
+
+
+============================== 12:22:44.774747 | dfa03724-9058-456b-9271-7c711a6a600b ==============================
+[0m12:22:44.774747 [info ] [MainThread]: Running with dbt=1.12.0
+[0m12:22:44.775059 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'maximum_seed_size_mib': '1', 'profiles_dir': '/home/clara/.dbt', 'no_print': 'None', 'printer_width': '80', 'log_format': 'default', 'static_parser': 'True', 'empty': 'None', 'version_check': 'True', 'debug': 'False', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'use_experimental_parser': 'False', 'use_colors': 'True', 'indirect_selection': 'eager', 'target_path': 'None', 'warn_error': 'None', 'write_json': 'True', 'log_path': 'logs', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'fail_fast': 'False', 'quiet': 'False', 'hints_enabled': 'True'}
+[0m12:22:44.788845 [info ] [MainThread]: dbt version: 1.12.0
+[0m12:22:44.789223 [info ] [MainThread]: python version: 3.11.15
+[0m12:22:44.789436 [info ] [MainThread]: python path: /home/clara/sql-data-warehouse/dbt_bigquery/.venv/bin/python3
+[0m12:22:44.789640 [info ] [MainThread]: os info: Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.43
+[0m12:22:45.571552 [info ] [MainThread]: Using profiles dir at /home/clara/.dbt
+[0m12:22:45.571918 [info ] [MainThread]: Using profiles.yml file at /home/clara/.dbt/profiles.yml
+[0m12:22:45.572082 [info ] [MainThread]: Using dbt_project.yml file at /home/clara/sql-data-warehouse/dbt_bigquery/dbt_project.yml
+[0m12:22:45.572225 [info ] [MainThread]: adapter type: bigquery
+[0m12:22:45.572365 [info ] [MainThread]: adapter version: 1.12.0
+[0m12:22:45.572509 [info ] [MainThread]: Configuration:
+[0m12:22:45.572641 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m12:22:45.572766 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m12:22:45.572915 [info ] [MainThread]: Required dependencies:
+[0m12:22:45.573065 [debug] [MainThread]: Executing "git --help"
+[0m12:22:45.574463 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m12:22:45.574692 [debug] [MainThread]: STDERR: "b''"
+[0m12:22:45.574838 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m12:22:45.574986 [info ] [MainThread]: Connection:
+[0m12:22:45.575133 [info ] [MainThread]:   method: service-account
+[0m12:22:45.575264 [info ] [MainThread]:   database: data-warehouse-dbt
+[0m12:22:45.575389 [info ] [MainThread]:   execution_project: data-warehouse-dbt
+[0m12:22:45.575514 [info ] [MainThread]:   schema: silver
+[0m12:22:45.575636 [info ] [MainThread]:   location: US
+[0m12:22:45.575756 [info ] [MainThread]:   priority: interactive
+[0m12:22:45.575877 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m12:22:45.575996 [info ] [MainThread]:   reservation: None
+[0m12:22:45.576138 [info ] [MainThread]:   impersonate_service_account: None
+[0m12:22:45.576261 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m12:22:45.576394 [info ] [MainThread]:   job_retries: 1
+[0m12:22:45.576512 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m12:22:45.576630 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m12:22:45.576751 [info ] [MainThread]:   job_link_info_level_log: False
+[0m12:22:45.576867 [info ] [MainThread]:   timeout_seconds: 300
+[0m12:22:45.576980 [info ] [MainThread]:   client_id: None
+[0m12:22:45.577093 [info ] [MainThread]:   token_uri: None
+[0m12:22:45.577214 [info ] [MainThread]:   compute_region: None
+[0m12:22:45.577489 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m12:22:45.577678 [info ] [MainThread]:   gcs_bucket: None
+[0m12:22:45.577835 [info ] [MainThread]:   dataproc_batch: None
+[0m12:22:45.578084 [info ] [MainThread]: Registered adapter: bigquery=1.12.0
+[0m12:22:45.630439 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m12:22:45.630771 [debug] [MainThread]: On debug: select 1 as id
+[0m12:22:45.631026 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:22:46.897101 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=data-warehouse-dbt&j=bq:US:e077478c-b89c-4875-8a38-dfe43e0411ae&page=queryresults
+[0m12:22:47.203709 [debug] [MainThread]: SQL status: OK in 0.305 seconds
+[0m12:22:47.587539 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m12:22:47.592882 [info ] [MainThread]: [31m1 check failed:[0m
+[0m12:22:47.593714 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/clara/sql-data-warehouse/dbt_bigquery/dbt_project.yml> not found
+
+[0m12:22:47.595068 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 2.8683295, "process_in_blocks": "123352", "process_kernel_time": 0.34187, "process_mem_max_rss": "237024", "process_out_blocks": "288", "process_user_time": 2.591746}
+[0m12:22:47.596364 [debug] [MainThread]: Command `dbt debug` failed at 12:22:47.596014 after 2.87 seconds
+[0m12:22:47.597490 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m12:22:47.598369 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d09a13a9190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d09a154fa50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d09a154ee90>]}
+[0m12:22:47.599200 [debug] [MainThread]: Flushing usage events
+[0m12:22:48.088361 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:11:16.458662 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d4c062ec7d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d4c03175510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d4c0322fcd0>]}
+
+
+============================== 12:11:16.462348 | 8c44b1d7-9096-44a4-8e3a-2bed8229850a ==============================
+[0m12:11:16.462348 [info ] [MainThread]: Running with dbt=1.12.0
+[0m12:11:16.462678 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'hints_enabled': 'True', 'invocation_command': 'dbt test --select silver', 'version_check': 'True', 'use_experimental_parser': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'maximum_seed_size_mib': '1', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'printer_width': '80', 'static_parser': 'True', 'profiles_dir': '/home/clara/.dbt', 'write_json': 'True', 'use_colors': 'True', 'empty': 'None', 'target_path': 'None', 'fail_fast': 'False', 'log_path': 'logs', 'quiet': 'False', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'debug': 'False'}
+[0m12:11:16.462941 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/clara/sql-data-warehouse/dbt_bigquery/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m12:11:16.463320 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.046704095, "process_in_blocks": "60360", "process_kernel_time": 0.19844, "process_mem_max_rss": "110672", "process_out_blocks": "8", "process_user_time": 0.743095}
+[0m12:11:16.463558 [debug] [MainThread]: Command `dbt test` failed at 12:11:16.463506 after 0.05 seconds
+[0m12:11:16.463778 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d4c03237710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d4c0322f350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d4c0322f290>]}
+[0m12:11:16.463985 [debug] [MainThread]: Flushing usage events
+[0m12:11:16.995970 [debug] [MainThread]: An error was encountered while trying to flush usage events
