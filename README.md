@@ -1,7 +1,7 @@
 ## What the project is about?
 This project demonstrates a data warehouse built around **medallion architecture** (bronze → silver → gold), taking messy CRM/ERP source data through cleaning, standardization, and business-ready modeling into a star schema.
 
-![f-architecture](./docs/architecture.png)
+![f-architecture](./docs/data_warehouse_architecture.png)
 
 ![dbt CI](https://github.com/Clara690/sql-data-warehouse/actions/workflows/dbt.yml/badge.svg)
 
