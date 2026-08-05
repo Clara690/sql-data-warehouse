@@ -27,7 +27,7 @@ This project has two implementations, built sequentially:
 | Data quality | Manual SQL checks | dbt tests (`unique`, `not_null`, `relationships`, custom singular tests) |
 | Documentation | README only | Auto-generated `dbt docs`, with lineage graph |
 | Orchestration/CI | None | GitHub Actions — runs `dbt build` on every push |
-| Dependency management | — | `uv` |
+| Dependency management |`uv` | `uv` |
 
 ## Repository structure
 
