@@ -15,6 +15,12 @@ models:
           - accepted_values:
               arguments:
                 values: ['Female', 'Male', 'n/a']
+      - name: country
+        description: "Country, reconciled from CRM (primary source) and ERP (secondary source)."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['United States', 'Germany', 'n/a', 'Australia', 'Canada', 'United Kingdom', 'France']
 
   - name: dim_products
     description: "Product dimension. Filtered to current products only (prd_end_dt is null) — historical product versions are excluded."
