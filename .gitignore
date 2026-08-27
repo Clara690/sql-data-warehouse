@@ -5,3 +5,8 @@ test*
 # extra tool 
 pgFormatter-5.10
 v5.10.tar.gz
+
+# terraform
+terraform/.terraform/
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
