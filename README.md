@@ -83,6 +83,18 @@ Every key column in silver and gold is covered by automated tests rather than on
 
 Every push to `dbt_bigquery/**` triggers a GitHub Actions workflow that installs dependencies, authenticates to BigQuery via a service-account key stored in GitHub Secrets, and runs `dbt build` — building all models and running all tests. A failing test fails the pipeline visibly, rather than silently shipping bad data.
 
+## Terrafrom 
+Infrastructure as code.
+
+The BigQuery datasets, dbt's service account, and its IAM role bindings (bigquery.dataEditor, bigquery.jobUser) are all defined declaratively in /terraform rather than managed by hand. Since these resources were originally created manually in the GCP console, they were brought under management via terraform import — a common real-world pattern for adopting IaC on infrastructure that predates it. terraform plan confirms zero drift between the code and the deployed resources.
+
+Provisioning is deliberately kept separate from runtime access: Terraform is run under the operator's personal GCP credentials, not the dbt service account, so the identity that can reconfigure infrastructure is never the same as the identity that runs the pipeline day-to-day.
+
+```text
+cd terraform
+terraform init
+terraform plan   # should report no changes if infrastructure matches code
+```
 ## Lineage & documentation
 
 `dbt docs generate` produces a full bronze → silver → gold dependency graph along with column-level descriptions and test coverage, browsable via `dbt docs serve`.
